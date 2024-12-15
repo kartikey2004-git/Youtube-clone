@@ -7,7 +7,7 @@ import { RiVideoAddLine } from "react-icons/ri";
 import { AiOutlineBell } from "react-icons/ai";
 
 import logo from "../../public/logo.png";
-import profile from "../../public/profile.jpg";
+import model from "../../public/model.png"
 
   function Navbar(){
 
@@ -36,7 +36,7 @@ import profile from "../../public/profile.jpg";
       <div className="flex  space-x-5 items-center ">
         <RiVideoAddLine className="text-2xl" />
         <AiOutlineBell className="text-2xl" />
-        <Avatar src={profile} size="32" round={true} />
+        <Avatar src={model} size="32" round={true} />
       </div>
     </div>
   );
