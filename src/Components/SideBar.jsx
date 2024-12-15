@@ -191,7 +191,7 @@ function Sidebar() {
       <br />
       <hr />
       {/* Explore */}
-      <div className="mt-4 space-y-3 items-center">
+      <div  className="mt-4 space-y-3 items-center">
         <div className="items-center space-x-2">
           <h1 className=" font-semibold">Explore</h1>
         </div>
@@ -237,7 +237,7 @@ function Sidebar() {
         <br /> Test new features
       </span>
       <br />
-      <p className="text-xs text-gray-500 mt-3">© 2024 Learn Coding</p>
+      <p className="text-xs text-gray-500 mt-3">© 2024</p>
     </div>
   );
 }
