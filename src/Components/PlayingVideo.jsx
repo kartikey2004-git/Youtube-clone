@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchData } from "../Utilis/rapidapi";
@@ -5,6 +6,7 @@ import ReactPlayer from "react-player";
 import { abbreviateNumber } from "js-abbreviation-number";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 import { AiOutlineLike } from "react-icons/ai";
+import SuggestedVideo from "./SuggestedVideo";
 
 function PlayingVideo() {
   const [video, setVideo] = useState();
@@ -81,6 +83,9 @@ function PlayingVideo() {
           <div className="flex gap-x-6 font-semibold rounded-xl mt-4 text-xl">
             {video?.stats?.comments} <p>Comments</p>
           </div>
+        </div>
+        <div>
+          <SuggestedVideo/>
         </div>
       </div>
     </div>
