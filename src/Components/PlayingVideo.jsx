@@ -7,4 +7,3 @@ function PlayingVideo() {
 }
 
 export default PlayingVideo
-

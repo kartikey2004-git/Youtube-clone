@@ -14,16 +14,12 @@ import { SiTrendmicro } from "react-icons/si";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { PiFilmSlateLight } from "react-icons/pi";
 import { CgMediaLive } from "react-icons/cg";
-
 import { FaRegNewspaper } from "react-icons/fa";
 import { TfiCup } from "react-icons/tfi";
 import { PiLightbulbLight } from "react-icons/pi";
 import { SiStylelint } from "react-icons/si";
 import { MdPodcasts } from "react-icons/md";
 import { BiVideo } from "react-icons/bi";
-import { MdOutlinePlaylistAdd } from "react-icons/md";
-
-
 
 
 function Sidebar() {
@@ -44,8 +40,6 @@ function Sidebar() {
       icon: <MdOutlineSubscriptions />,
     },
   ];
-
-
   const sidebarItems2 = [
     {
       id: 1,
@@ -60,7 +54,7 @@ function Sidebar() {
     {
       id: 3,
       name: "Playlists",
-      icon: <MdOutlinePlaylistAdd />,
+      icon: <MdOutlineSubscriptions />,
     },
     {
       id: 4,
@@ -78,9 +72,6 @@ function Sidebar() {
       icon: <AiOutlineLike />,
     },
   ];
-
-
-
   const sidebarItems3 = [
     {
       id: 1,
@@ -134,13 +125,10 @@ function Sidebar() {
     },
     {
       id: 11,
-      name: "Padcasts",
+      name: "Podcasts",
       icon: <MdPodcasts />,
     },
   ];
-
-
-
   const sidebarItems4 = [
     {
       id: 1,
@@ -163,13 +151,8 @@ function Sidebar() {
       icon: <SiYoutubekids />,
     },
   ];
-
-
-
   return (
-    <div className="fixed top-[4rem] left-0 px-6 w-[17%] h-[calc(100vh-4rem)] overflow-y-scroll overflow-x-hidden">
-
-
+    <div className="px-6 w-[17%] h-[calc(100vh-6.625rem)] overflow-y-scroll overflow-x-hidden ">
       {/* Home */}
       <div className=" space-y-3 items-center">
         {sidebarItems.map((item) => {
@@ -186,8 +169,6 @@ function Sidebar() {
       </div>
       <br />
       <hr />
-
-
       {/* You */}
       <div className="mt-4 space-y-3 items-center">
         <div className="flex items-center space-x-2">
@@ -208,10 +189,6 @@ function Sidebar() {
       </div>
       <br />
       <hr />
-
-
-
-
       {/* Explore */}
       <div className="mt-4 space-y-3 items-center">
         <div className="items-center space-x-2">
@@ -231,10 +208,6 @@ function Sidebar() {
       </div>
       <br />
       <hr />
-
-
-
-
       {/* More section */}
       <div className="mt-4 space-y-3 items-center">
         <div className="items-center space-x-2">
@@ -256,10 +229,6 @@ function Sidebar() {
         <hr />
       </div>
       <br />
-
-
-
-      
       <span className="text-xs text-gray-600 font-semibold">
         About Press Copyright <br /> Contact us Creators <br /> Advertise
         Developers <br />
@@ -273,4 +242,3 @@ function Sidebar() {
 }
 
 export default Sidebar;
-
