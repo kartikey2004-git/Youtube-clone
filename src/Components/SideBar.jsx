@@ -20,6 +20,7 @@ import { PiLightbulbLight } from "react-icons/pi";
 import { SiStylelint } from "react-icons/si";
 import { MdPodcasts } from "react-icons/md";
 import { BiVideo } from "react-icons/bi";
+import { MdOutlinePlaylistAdd } from "react-icons/md";
 
 
 function Sidebar() {
@@ -54,7 +55,7 @@ function Sidebar() {
     {
       id: 3,
       name: "Playlists",
-      icon: <MdOutlineSubscriptions />,
+      icon: <MdOutlinePlaylistAdd />
     },
     {
       id: 4,
@@ -219,7 +220,7 @@ function Sidebar() {
               key={item.id}
               className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1"
             >
-              <div className="text-xl cursor-pointer text-red-500">
+              <div className="text-xl cursor-pointer text-red-700">
                 {item.icon}
               </div>
               <span className="cursor-pointer">{item.name}</span>
