@@ -1,19 +1,20 @@
+import { Route, Routes } from "react-router-dom";
+import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
-import SideBar from "./Components/SideBar";
-import { useAuth } from "./context/AuthProvider";
+import Search from "./Components/Search";
+import PlayingVideo from "./Components/PlayingVideo";
 
 function App() {
-
-  const {loading,data} = useAuth()
-  console.log(loading);
-  console.log(data);
-
-  return ( 
-  <div>
-    <Navbar/>
-    <SideBar/>
-  </div>
-  )
+  return (
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/search/:searchQuery" element={<Search />} />
+        <Route path="/video/:id" element={<PlayingVideo />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
