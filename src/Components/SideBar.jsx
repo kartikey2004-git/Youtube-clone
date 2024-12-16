@@ -22,7 +22,6 @@ import { MdPodcasts } from "react-icons/md";
 import { BiVideo } from "react-icons/bi";
 import { MdOutlinePlaylistAdd } from "react-icons/md";
 
-
 function Sidebar() {
   const sidebarItems = [
     {
@@ -55,7 +54,7 @@ function Sidebar() {
     {
       id: 3,
       name: "Playlists",
-      icon: <MdOutlinePlaylistAdd />
+      icon: <MdOutlinePlaylistAdd />,
     },
     {
       id: 4,
@@ -191,7 +190,7 @@ function Sidebar() {
       <br />
       <hr />
       {/* Explore */}
-      <div  className="mt-4 space-y-3 items-center">
+      <div className="mt-4 space-y-3 items-center">
         <div className="items-center space-x-2">
           <h1 className=" font-semibold">Explore</h1>
         </div>

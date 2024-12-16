@@ -10,16 +10,25 @@ import SuggestedVideo from "./SuggestedVideo";
 
 function PlayingVideo() {
   const [video, setVideo] = useState();
+  const [relatedVideo, setRelatedVideo] = useState();
   const { id } = useParams();
 
   useEffect(() => {
     fetchVideoDetails();
+    fetchRelatedVideo();
   }, [id]);
 
   const fetchVideoDetails = () => {
     fetchData(`video/details/?id=${id}`).then((res) => {
       console.log(res);
       setVideo(res);
+    });
+  };
+
+  const fetchRelatedVideo = () => {
+    fetchData(`video/related-contents/?id=${id}`).then((res) => {
+      console.log(res);
+      setRelatedVideo(res);
     });
   };
 
@@ -84,8 +93,11 @@ function PlayingVideo() {
             {video?.stats?.comments} <p>Comments</p>
           </div>
         </div>
-        <div>
-          <SuggestedVideo/>
+        <div className="flex flex-col px-4 py-6 h-[calc(100vh-4.625rem)] overflow-y-scroll overflow-x-hidden lg:w-[350px] xl:w-[400px]">
+          {relatedVideo?.contents?.map((item, index) => {
+            if (item?.type !== "video") return false;
+            return <SuggestedVideo key={index} video={item?.video} />;
+          })}
         </div>
       </div>
     </div>
