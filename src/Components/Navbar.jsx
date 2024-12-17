@@ -8,11 +8,18 @@ import { AiOutlineBell } from "react-icons/ai";
 
 import logo from "../../public/logo.png";
 import model from "../../public/model.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useUtilis } from "../context/UtilisContext";
 
 function Navbar() {
   const [searchQuery, setSearchQuery] = useState("");
+
+  const { isSideBar, setIsSideBar, mobileShow, setMobileShow } = useUtilis()
+
+  useEffect(() => {
+    console.log({isSideBar,mobileShow});
+  },[isSideBar])
 
   const navigate = useNavigate();
 
@@ -26,10 +33,18 @@ function Navbar() {
     }
   };
 
+  const handleSidebar = () => {
+    if(window.innerWidth <= 1280){
+      setIsSideBar(!isSideBar)
+      setMobileShow(!mobileShow)
+    }
+    setIsSideBar(!isSideBar)
+  }
+
   return (
     <div className="flex justify-between fixed top-0 w-[100%] bg-white px-6 py-2">
       <div className="flex items-center space-x-4  ">
-        <AiOutlineMenu className="text-xl cursor-pointer" />
+        <AiOutlineMenu className="text-xl cursor-pointer" onClick={handleSidebar}/>
         <img src={logo} alt="" className="w-28 cursor-pointer" />
       </div>
 
