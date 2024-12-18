@@ -1,4 +1,4 @@
-import Sidebar from "./Sidebar.jsx";
+import Sidebar from "./SideBar.jsx"
 import Video from "./Video";
 import { useAuth } from "../context/AuthProvider.jsx";
 import ListItems from "./ListItems.jsx";
