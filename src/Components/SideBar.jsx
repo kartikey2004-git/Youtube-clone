@@ -4,7 +4,6 @@ import { MdOutlineSubscriptions, MdHistory } from "react-icons/md";
 import { PiUserSquareThin } from "react-icons/pi";
 import { IoGameControllerOutline } from "react-icons/io5";
 import { AiOutlineLike } from "react-icons/ai";
-import { FaChevronRight } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 import { SiYoutubestudio } from "react-icons/si";
 import { SiYoutubekids } from "react-icons/si";
@@ -20,6 +19,7 @@ import { PiLightbulbLight } from "react-icons/pi";
 import { SiStylelint } from "react-icons/si";
 import { MdPodcasts } from "react-icons/md";
 import { BiVideo } from "react-icons/bi";
+
 function Sidebar() {
   const sidebarItems = [
     {
@@ -38,6 +38,7 @@ function Sidebar() {
       icon: <MdOutlineSubscriptions />,
     },
   ];
+
   const sidebarItems2 = [
     {
       id: 1,
@@ -70,6 +71,7 @@ function Sidebar() {
       icon: <AiOutlineLike />,
     },
   ];
+
   const sidebarItems3 = [
     {
       id: 1,
@@ -127,6 +129,7 @@ function Sidebar() {
       icon: <MdPodcasts />,
     },
   ];
+
   const sidebarItems4 = [
     {
       id: 1,
@@ -149,93 +152,69 @@ function Sidebar() {
       icon: <SiYoutubekids />,
     },
   ];
+
   return (
-    <div className="px-6 w-[17%] h-[calc(100vh-6.625rem)] overflow-y-scroll overflow-x-hidden ">
-      {/* Home */}
-      <div className=" space-y-3 items-center">
-        {sidebarItems.map((item) => {
-          return (
+    <>
+      {/* Desktop Sidebar */}
+      <div className="hidden md:block w-64 h-[calc(100vh-6.625rem)] overflow-y-scroll overflow-x-hidden fixed top-20 left-0">
+        <div className="flex flex-col space-y-4">
+          {sidebarItems.map((item) => (
             <div
               key={item.id}
-              className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1"
+              className="flex items-center space-x-4 px-4 py-2 hover:bg-gray-100 rounded-xl cursor-pointer"
             >
-              <div className="text-xl cursor-pointer">{item.icon}</div>
-              <span className="cursor-pointer">{item.name}</span>
+              <span className="text-2xl">{item.icon}</span>
+              <span>{item.name}</span>
             </div>
-          );
-        })}
-      </div>
-      <br />
-      <hr />
-      {/* You */}
-      <div className="mt-4 space-y-3 items-center">
-        <div className="flex items-center space-x-2">
-          <h1>You</h1>
-          <FaChevronRight />
+          ))}
+          <hr />
+          {sidebarItems2.map((item) => (
+            <div
+              key={item.id}
+              className="flex items-center space-x-4 px-4 py-2 hover:bg-gray-100 rounded-xl cursor-pointer"
+            >
+              <span className="text-2xl">{item.icon}</span>
+              <span>{item.name}</span>
+            </div>
+          ))}
+          <hr />
+          {sidebarItems3.map((item) => (
+            <div
+              key={item.id}
+              className="flex items-center space-x-4 px-4 py-2 hover:bg-gray-100 rounded-xl cursor-pointer"
+            >
+              <span className="text-2xl">{item.icon}</span>
+              <span>{item.name}</span>
+            </div>
+          ))}
+          <hr />
+          {sidebarItems4.map((item) => (
+            <div
+              key={item.id}
+              className="flex items-center space-x-4 px-4 py-2 hover:bg-gray-100 rounded-xl cursor-pointer"
+            >
+              <span className="text-2xl">{item.icon}</span>
+              <span>{item.name}</span>
+            </div>
+          ))}
         </div>
-        {sidebarItems2.map((item) => {
-          return (
+      </div>
+
+      {/* Mobile Bottom Navigation */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50">
+        <div className="flex justify-around items-center h-16">
+          {sidebarItems.map((item) => (
             <div
               key={item.id}
-              className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1"
+              className="flex flex-col items-center justify-center space-y-1 cursor-pointer"
             >
-              <div className="text-xl cursor-pointer">{item.icon}</div>
-              <span className="cursor-pointer">{item.name}</span>
+              <span className="text-2xl">{item.icon}</span>
+              <span className="text-xs">{item.name}</span>
             </div>
-          );
-        })}
-      </div>
-      <br />
-      <hr />
-      {/* Explore */}
-      <div className="mt-4 space-y-3 items-center">
-        <div className="items-center space-x-2">
-          <h1 className=" font-semibold">Explore</h1>
+          ))}
         </div>
-        {sidebarItems3.map((item) => {
-          return (
-            <div
-              key={item.id}
-              className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1"
-            >
-              <div className="text-xl cursor-pointer">{item.icon}</div>
-              <span className="cursor-pointer">{item.name}</span>
-            </div>
-          );
-        })}
       </div>
-      <br />
-      <hr />
-      {/* More section */}
-      <div className="mt-4 space-y-3 items-center">
-        <div className="items-center space-x-2">
-          <h1 className=" font-semibold">More From Youtube</h1>
-        </div>
-        {sidebarItems4.map((item) => {
-          return (
-            <div
-              key={item.id}
-              className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1"
-            >
-              <div className="text-xl cursor-pointer text-red-500">
-                {item.icon}
-              </div>
-              <span className="cursor-pointer">{item.name}</span>
-            </div>
-          );
-        })}
-        <hr />
-      </div>
-      <br />
-      <span className="text-xs text-gray-600 font-semibold">
-        About Press Copyright <br /> Contact us Creators <br /> Advertise
-        Developers <br />
-        <p className="mt-3">Terms Privacy Policy & Safety</p> How YouTube works{" "}
-        <br /> Test new features
-      </span>
-      <br />
-      <p className="text-xs text-gray-500 mt-3">© 2024 Learn Coding</p>
-    </div>
+    </>
   );
 }
 

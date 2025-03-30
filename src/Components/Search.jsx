@@ -19,16 +19,14 @@ function Search() {
     });
   };
   return (
-    <div className="">
-      <div className="mt-24 flex flex-row h-[calc(100%-56px)]">
-        <SideBar />
-        <div className="grow h-[calc(100vh-6.625rem)] overflow-y-scroll overflow-x-hidden">
-          <div className=" grid grid-cols-1 gap-2 p-2">
-            {result?.map((item, index) => {
-              if (item?.type !== "video") return false;
-              return <SearchCard key={index} video={item?.video} />;
-            })}
-          </div>
+    <div className="flex flex-col md:flex-row mt-20">
+      <SideBar />
+      <div className="w-full md:ml-64 h-[calc(100vh-6.625rem)] overflow-y-scroll overflow-x-hidden">
+        <div className="grid grid-cols-1 gap-2 p-2">
+          {result?.map((item, index) => {
+            if (item?.type !== "video") return false;
+            return <SearchCard key={index} video={item?.video} />;
+          })}
         </div>
       </div>
     </div>
